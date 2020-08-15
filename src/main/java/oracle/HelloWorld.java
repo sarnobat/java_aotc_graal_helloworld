@@ -24,12 +24,14 @@ public final class HelloWorld {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) throws Exception {
-    			ImmutableMap.Builder<String, Object> theParams = ImmutableMap.<String, Object>builder();
+	ImmutableMap.Builder<String, Object> theParams = ImmutableMap.<String, Object>builder();
 
         Multimap<String, String> callingMethodToMethodInvocationMultiMap = LinkedHashMultimap
                         .create();
         Multimap<String, String> classNameToFieldTypesMultiMap = LinkedHashMultimap
                         .create();
-        System.out.println("Hello " + theParams.toString());
+        System.out.println("Hello " + theParams.getClass().toString());
+        System.out.println("Hello " +callingMethodToMethodInvocationMultiMap.getClass().toString());
+        System.out.println("Hello " +classNameToFieldTypesMultiMap.getClass().toString());
     }
 }
