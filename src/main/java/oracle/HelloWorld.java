@@ -1,5 +1,9 @@
 package oracle;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.HashMultimap;
@@ -33,5 +37,15 @@ public final class HelloWorld {
         System.out.println("Hello " + theParams.getClass().toString());
         System.out.println("Hello " +callingMethodToMethodInvocationMultiMap.getClass().toString());
         System.out.println("Hello " +classNameToFieldTypesMultiMap.getClass().toString());
+
+		read: {
+			InputStreamReader isr = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(isr);
+			String line = br.readLine();
+			while (line != null) {
+				System.out.println(line);
+				line = br.readLine();
+			}
+		}
     }
 }
